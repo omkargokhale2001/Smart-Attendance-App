@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, render_template, request, session, redirect, url_for
 from pymongo import MongoClient
 from dotenv import load_dotenv
