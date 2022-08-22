@@ -5,6 +5,7 @@ import face_recognition
 import numpy as np
 
 
+
 def detect_faces(grp_img):
     face_locations = face_recognition.face_locations(grp_img)
     images_array = []

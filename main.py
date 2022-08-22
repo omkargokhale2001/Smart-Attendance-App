@@ -1,11 +1,16 @@
+import os
+
 from flask import Flask, render_template, request, session, redirect, url_for
 from pymongo import MongoClient
+from dotenv import load_dotenv
+from os import environ
 from PIL import Image
 import matplotlib.pyplot as plt
 import cv2
 import pymongo
 from model import *
 
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -21,7 +26,7 @@ def mark_attendance():
         grp_image = request.form['grp_image']
         # grp_image = cv2.imread("./test_data/Group Photo (1).png")
         grp_image = np.array(grp_image)
-        CONNECTION_STRING = "mongodb+srv://syntaxico:{i2hhW_Z5@cluster0.fx786w6.mongodb.net/?retryWrites=true&w=majority"
+        CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
@@ -50,7 +55,7 @@ def mark_attendance():
 @app.route('/display_percentage', methods=['GET', 'POST'])
 def display_percentage():
     if request.method == 'GET':
-        CONNECTION_STRING = "mongodb+srv://syntaxico:{i2hhW_Z5@cluster0.fx786w6.mongodb.net/?retryWrites=true&w=majority"
+        CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
@@ -88,7 +93,7 @@ def add_worker():
         # print(len(embeds))
 
         # Code for adding worker to db
-        CONNECTION_STRING = "mongodb+srv://syntaxico:{i2hhW_Z5@cluster0.fx786w6.mongodb.net/?retryWrites=true&w=majority"
+        CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
@@ -111,7 +116,7 @@ def delete_worker():
     # Code for deleting worker from db
     if request.method == "POST":
         name = request.form['name']
-        CONNECTION_STRING = "mongodb+srv://syntaxico:{i2hhW_Z5@cluster0.fx786w6.mongodb.net/?retryWrites=true&w=majority"
+        CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
