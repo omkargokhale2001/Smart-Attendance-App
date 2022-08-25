@@ -16,14 +16,14 @@ def detect_faces(grp_img):
     return images_array
 
 def convert_image(image):
-    result = DeepFace.represent(img_path=image, model_name="Facenet", enforce_detection=False)
+    result = DeepFace.represent(img_path=image, model_name="Dlib", enforce_detection=False)
     return result
 
 
 def find_embeds(image_arr):
     embed_arr = []
     for i in range(len(image_arr)):
-        result = DeepFace.represent(img_path=image_arr[i], model_name="Facenet", enforce_detection=False)
+        result = DeepFace.represent(img_path=image_arr[i], model_name="Dlib", enforce_detection=False)
         embed_arr.append(result)
     return embed_arr
 

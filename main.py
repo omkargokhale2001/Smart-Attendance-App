@@ -21,9 +21,9 @@ app = Flask(__name__)
 
 @app.route('/mark_attendance', methods=['GET', 'POST'])
 def mark_attendance():
-    if request.method == 'POST':
-        grp_image = request.form['grp_image']
-        # grp_image = cv2.imread("./test_data/Group Photo (1).png")
+    if request.method == 'GET':
+        # grp_image = request.form['grp_image']
+        grp_image = cv2.imread("./test_data/Group Photo (1).png")
         grp_image = np.array(grp_image)
         CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
@@ -48,7 +48,7 @@ def mark_attendance():
         })
         # optional -> if to < 30/getMonth:total_day = 0
 
-    return attendance_list
+    return attendance_list, "Number of people detected are:{}".format(len(attendance_list))
 
 
 @app.route('/display_percentage', methods=['GET', 'POST'])
