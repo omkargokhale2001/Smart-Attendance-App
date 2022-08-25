@@ -21,9 +21,9 @@ app = Flask(__name__)
 
 @app.route('/mark_attendance', methods=['GET', 'POST'])
 def mark_attendance():
-    if request.method == 'POST':
-        grp_image = request.form['grp_image']
-        # grp_image = c2.imread("./test_data/Group Photo (1).png")
+    if request.method == 'GET':
+        # grp_image = request.form['grp_image']
+        grp_image = cv2.imread("./test_data/Group Photo (1).png")
         grp_image = np.array(grp_image)
         CONNECTION_STRING = os.getenv("MONGO_URL")
         # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
