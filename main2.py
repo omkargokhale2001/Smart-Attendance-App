@@ -201,7 +201,7 @@ def main():
     # print("server started!")
     # http.serve_forever()
     print("done")
-    app.run(host='<IP>', port=5000, debug=True, threaded=False)
+    app.run(host='192.168.199.194', port=5000, debug=True, threaded=False)
 
 
 if __name__ == '__main__':

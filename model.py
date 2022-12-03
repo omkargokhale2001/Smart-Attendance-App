@@ -67,5 +67,6 @@ def wrapper(grp_img, cur):
         print(temp_arr)
         min_ind = np.argmin(temp_arr)
         attendance.append(names[min_ind])
+    print(attendance)
     return attendance
 
