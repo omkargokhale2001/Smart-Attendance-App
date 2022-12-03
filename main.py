@@ -35,7 +35,6 @@ def mark_attendance():
         # embeds = convert_image(image)
         grp_image = np.array(grp_image)
         CONNECTION_STRING = os.getenv("MONGO_URL")
-        # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
         users = db_name["Labourers"]
@@ -63,7 +62,6 @@ def mark_attendance():
 def display_percentage():
     if request.method == 'GET':
         CONNECTION_STRING = os.getenv("MONGO_URL")
-        # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster+1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
         users = db_name["Labourers"]
@@ -151,8 +149,6 @@ def add_worker():
 
         # Code for adding worker to db
         CONNECTION_STRING = os.getenv("MONGO_URL")
-        #MONGO_URL = "mongodb+srv://syntaxico:{i2hhW_Z5@cluster0.fx786w6.mongodb.net/?retryWrites=true&w=majority"
-        # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
         users = db_name["Labourers"]
@@ -179,7 +175,6 @@ def delete_worker():
     if request.method == "POST":
         name = request.form['name']
         CONNECTION_STRING = os.getenv("MONGO_URL")
-        # CONNECTION_STRING = "mongodb+srv://omkar:omkar1212@cluster1.2melkie.mongodb.net/?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
         db_name = client["SIH_app_database"]
         users = db_name["Labourers"]
@@ -196,10 +191,6 @@ def sayhello():
 
 
 def main():
-    # print("flag")
-    # http = WSGIServer(('192.168.28.194', 5000), app.wsgi_app)
-    # print("server started!")
-    # http.serve_forever()
     print("done")
     app.run(host='<IP>', port=5000, debug=True, threaded=False)
 
