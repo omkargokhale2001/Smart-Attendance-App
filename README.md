@@ -4,6 +4,6 @@ The main functionality of the application is to detect and recognize the faces o
 
 We have designed an android application as well as a website to act as a user interface make requests to the Flask API.
 
-The image below illustates the working of the app.
+The image below illustates the working of the API.
 
 ![Screenshot](illustration.png)
