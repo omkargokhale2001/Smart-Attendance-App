@@ -6,4 +6,4 @@ We have designed an android application as well as a website to act as a user in
 
 The image below illustates the working of the app.
 
-![alt text](https://drive.google.com/file/d/1dY0Pizv8zGWDnYtY0D7JY1QICN9RlCcE/view?usp=share_link)
+![Screenshot](illustration.png)
