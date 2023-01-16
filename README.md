@@ -10,6 +10,6 @@ The image below illustrates the working of the API.
 
 # [Android Application](https://github.com/shirbhate2002/sih-2022)
 
-The android facilates the user to to upload photos, create and delete profiles of the employees/workers and monitor their attendance. In addition to this, the application also keeps a track of location of the user.
+The android facilates the user to upload photos, create and delete profiles of the employees/workers and monitor their attendance. In addition to this, the application also keeps a track of location of the user.
 
 
