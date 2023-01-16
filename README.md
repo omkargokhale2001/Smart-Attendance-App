@@ -7,3 +7,9 @@ We have designed an android application as well as a website to act as a user in
 The image below illustrates the working of the API.
 
 ![Screenshot](illustration.png)
+
+#[Android Application](https://github.com/shirbhate2002/sih-2022)
+
+The android facilates the user to to upload photos, create and delete profiles of the employees/workers and monitor their attendance. In addition to this, the application also keeps a track of location of the user.
+
+
